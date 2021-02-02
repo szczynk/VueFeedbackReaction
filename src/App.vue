@@ -2,6 +2,7 @@
   #app(:style="style")
     h1 All emojis
     vue-feedback-reaction.feedback(v-model="feedback" :labels="['Very Poor', 'Poor', 'Average', 'Good', 'Excellent']" label-class="font-medium text-sm text-gray-800")
+    button(@click="reset") reset
     h2 Single emoji
     vue-reaction-emoji(
       :reaction="reaction"
@@ -21,6 +22,7 @@ export default {
   data () {
     return {
       feedback: '',
+      feedback_: '',
       reaction: 'hate',
       active: false,
       disabled: false
@@ -36,6 +38,11 @@ export default {
                 : '#1194AA',
         transition: 'all 500ms linear'
       }
+    }
+  },
+  methods: {
+    reset () {
+      this.feedback = ''
     }
   }
 }

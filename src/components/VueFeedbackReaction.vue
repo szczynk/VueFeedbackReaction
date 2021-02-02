@@ -1,6 +1,6 @@
 <template lang="pug">
-  .vue-feedback-reaction(:style="{ width: containerWidth, height: containerHeight }")
-    .reaction
+  .row.vue-feedback-reaction(:style="{ width: containerWidth, height: containerHeight }")
+    .col-2.reaction
       vue-reaction(
         v-model="reactionValue"
         reaction="1"
@@ -11,7 +11,7 @@
         :height="emojiHeight"
       )
       span(:class="labelClass") {{ labels[0] || '' }}
-    .reaction
+    .col-2.reaction
       vue-reaction(
         v-model="reactionValue"
         reaction="2"
@@ -22,7 +22,7 @@
         :height="emojiHeight"
       )
       span(:class="labelClass") {{ labels[1] || '' }}
-    .reaction
+    .col-2.reaction
       vue-reaction(
         v-model="reactionValue"
         reaction="3"
@@ -33,7 +33,7 @@
         :height="emojiHeight"
       )
       span(:class="labelClass") {{ labels[2] || '' }}
-    .reaction
+    .col-2.reaction
       vue-reaction(
         v-model="reactionValue"
         reaction="4"
@@ -44,7 +44,7 @@
         :height="emojiHeight"
       )
       span(:class="labelClass") {{ labels[3] || '' }}
-    .reaction
+    .col-2.reaction
       vue-reaction(
         v-model="reactionValue"
         reaction="5"
@@ -103,6 +103,16 @@ export default {
       reactionValue: ''
     }
   },
+  // computed: {
+  //   reactionValue_: {
+  //     get () {
+  //       return this.value
+  //     },
+  //     set (newValue) {
+  //       this.reactionValue = newValue
+  //     }
+  //   }
+  // },
   mounted () {
     this.reactionValue = this.value
   },
